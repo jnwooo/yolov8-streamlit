@@ -28,7 +28,7 @@ st.sidebar.header("ML Model Config")
 
 # Model Options
 model_type = st.sidebar.radio(
-    "Select Task", ['Detection', 'Segmentation', 'Potholes Detection', 'License Plate Detection' , 'License Plate Detection with EasyOCR'])
+    "Select Task", ['Detection', 'Segmentation', 'Potholes Detection', 'License Plate Detection' , 'License Plate Detection with EasyOCR', 'PPE Detection'])
 
 confidence = float(st.sidebar.slider(
     "Select Model Confidence", 25, 100, 40)) / 100
@@ -44,6 +44,8 @@ elif model_type == 'License Plate Detection':
     model_path = Path(settings.CUSTOM_MODEL2)
 elif model_type == 'License Plate Detection with EasyOCR':
     model_path = Path(settings.CUSTOM_MODEL2)
+elif model_type == 'PPE Detection':
+    model_path = Path(settings.CUSTOM_MODEL3)
 
 # Load Pre-trained ML Model
 try:
@@ -171,12 +173,12 @@ elif source_radio == settings.VIDEO:
         helper.infer_uploaded_video(confidence, model)
 
 elif source_radio == settings.WEBCAM:
-    if model_type in ['Detection', 'Segmentation', 'Potholes Detection', 'License Plate Detection']:
+    if model_type in ['Detection', 'Segmentation', 'Potholes Detection', 'License Plate Detection', 'PPE Detection']:
         helper.play_webcam(confidence, model)
     else:st.error("Webcam is not supported for License Plate Detection with EasyOCR")
 
 elif source_radio == settings.YOUTUBE:
-    if model_type in ['Detection', 'Segmentation', 'Potholes Detection', 'License Plate Detection']:
+    if model_type in ['Detection', 'Segmentation', 'Potholes Detection', 'License Plate Detection', 'PPE Detection']:
         helper.play_youtube_video(confidence, model)
     else:st.error("Youtube is not supported for License Plate Detection with EasyOCR")
 
