@@ -32,4 +32,5 @@ MODEL_DIR = ROOT / 'weights'
 DETECTION_MODEL = MODEL_DIR / 'yolov8n.pt'
 SEGMENTATION_MODEL = MODEL_DIR / 'yolov8n-seg.pt'
 CUSTOM_MODEL1 = MODEL_DIR / 'potholes.pt'
+CUSTOM_MODEL2 = MODEL_DIR / 'car.pt'
 
