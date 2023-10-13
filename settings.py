@@ -1,17 +1,17 @@
 from pathlib import Path
 import sys
 
-# Get the absolute path of the current file
+# Get the absolute path of the current file (only works in .py files) - path to this file ./settings.py
 file_path = Path(__file__).resolve()
 
-# Get the parent directory of the current file
+# Get the parent directory of the current file (main file: /yolov8-streamlit)
 root_path = file_path.parent
 
-# Add the root path to the sys.path list if it is not already there
+# Add the root path to the sys.path list if it is not already there : allows for things like helper.process_license_plate()
 if root_path not in sys.path:
     sys.path.append(str(root_path))
 
-# Get the relative path of the root directory with respect to the current working directory
+# Get the relative path of the root directory with respect to the main folder (basically IMAGES_DIR = ../yolov8-streamlit/'images')
 ROOT = root_path.relative_to(Path.cwd())
 
 # Sources
