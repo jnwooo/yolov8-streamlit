@@ -250,4 +250,20 @@ def detected_frames(conf, model, st_frame, image):
     # Display the modified frame with updated bounding boxes and license plate text
     st_frame.image(modified_frame, caption='Detected Video', channels="BGR", use_column_width=True)
 
+# Function to apply flood fill and other processing to the image
+def process_license_plate(license_plate_image, floodfill_threshold, threshold_block_size, brightness):
+    # Convert to grayscale
+    license_plate_image_gray = cv2.cvtColor(license_plate_image, cv2.COLOR_BGR2GRAY)
+
+    # Replace dark values (below floodfill_threshold) with floodfill_threshold
+    license_plate_image_gray[license_plate_image_gray < floodfill_threshold] = floodfill_threshold
+
+    # Adjust brightness
+    license_plate_image_bright = cv2.convertScaleAbs(license_plate_image_gray, alpha=1, beta=brightness)
+
+    # Apply adaptive thresholding to create a black-and-white image
+    license_plate_image_thresh = cv2.adaptiveThreshold(license_plate_image_bright, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, threshold_block_size, 2)
+
+    return license_plate_image_thresh
+
     
