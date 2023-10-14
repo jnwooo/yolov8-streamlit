@@ -2,7 +2,7 @@
 * Model used: https://github.com/ultralytics/ultralytics
 * App link: https://yolov8-app-object-detection.streamlit.app/
 
-# App Features
+# App Features (Support for processing Image/Video/Youtube Videos/Webcam formats)
 * Object detection/segmentation using pre-trained yoloV8 model (trained on COCO dataset)- Refer to coco_classnames.txt for the list of objects detectable using the base model
 * Custom-trained yolov8 model to detect potholes (mAP50:**0.721**, mAP50-95:**0.407**)
 * Custom-trained yolov8 model to detect car license plates (mAP50:**0.995**, mAP50-95:**0.828**)
