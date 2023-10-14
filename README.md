@@ -1,5 +1,6 @@
 # yolov8-streamlit-app
 * Model used: https://github.com/ultralytics/ultralytics
+* App link: https://yolov8-app-object-detection.streamlit.app/
 
 # App Features
 * Object detection/segmentation using pre-trained yoloV8 model (trained on COCO dataset)- Refer to coco_classnames.txt for the list of objects detectable using the base model
@@ -15,6 +16,9 @@
 
 # Issues
 * Currently webcam feature isnt working after deploying to streamlit cloud but it works locally.
+
+
+
 
   
 
