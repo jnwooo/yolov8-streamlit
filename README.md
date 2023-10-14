@@ -8,7 +8,7 @@
 * Custom-trained yolov8 model to detect car license plates (mAP50:**0.995**, mAP50-95:**0.828**)
 * Integrated license plate detector with EasyOCR to read license plates (With Image preprocessing function to handle images with brightness and Image glare issues)
 * Custom-trained yolov8 model to PPE (7 classes: ['Protective Helm', 'Shield', 'Jacket', 'Dust Mask', 'Eye Wear, 'Glove, 'Protective Boots')
-* To use your custom trained model, just add your .pt files into the weights and make some minor changes to the settings.py and app.py files
+* To use your custom trained model, just add your .pt files into the weights and make some minor changes to the settings.py and app.py files **(Note: If your model's weights are >25mb, you require Git LFS to upload your files)**
 
 # Possible improvements
 * Improve the accuracy of the custom-trained models (train on higher quality data, Data augmentation, Hyperparameter tuning(computationally intensive, time-consuming)
