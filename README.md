@@ -13,7 +13,7 @@
 # Possible improvements
 * Improve the accuracy of the custom-trained models (train on higher quality data, Data augmentation, Hyperparameter tuning(computationally intensive, time-consuming)
 * Integrate car license plate detector with SORT/DeepSORT which keep tracks of the car's information. (For real-world use case)
-* Experiment with using different size yolov8 models (smaller models offer faster inference but less accuracy), smaller size models may be more suitable if you're deploying your app on Streamlit's Community Cloud
+* Experiment with using different size yolov8 models (smaller models offers faster inference but less accuracy), smaller size models may be more suitable if you're deploying your app on Streamlit's Community Cloud
 
 # Issues
 * Currently webcam feature isnt working after deploying to streamlit cloud but it works locally.
